@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Diagram class="oracle.dbtools.crest.swingui.relational.DPVRelational" name="dfDB1_Revature" id="92A0D0FF-61AA-3B31-61E1-F884BF86CD4E">
+<createdBy>DanielFelleman</createdBy>
+<modifiedBy>DanielFelleman</modifiedBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<autoRoute>false</autoRoute>
+<boxInbox>true</boxInbox>
+<showLegend>false</showLegend>
+<showLabels>false</showLabels>
+<showRelAttributes>false</showRelAttributes>
+<gridEnabled>false</gridEnabled>
+<showGrid>false</showGrid>
+<diagramColor>-1</diagramColor>
+<display>false</display>
+<notation>1</notation>
+<objectViews>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="47A17FFB-D7D3-C7FB-D749-CD0A7C9E2105" otype="Table" vid="DDE45798-0758-F939-C7CC-473810AF31DE">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="121" y="104" width="242" height="83"/>
+</OView>
+<OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="F721732A-2942-3A38-8B9D-A09B89546964" otype="Table" vid="D2CB3527-9A3C-5904-993A-B3029CFCE02A">
+<hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
+<bounds x="506" y="84" width="217" height="148"/>
+</OView>
+</objectViews>
+</Diagram>

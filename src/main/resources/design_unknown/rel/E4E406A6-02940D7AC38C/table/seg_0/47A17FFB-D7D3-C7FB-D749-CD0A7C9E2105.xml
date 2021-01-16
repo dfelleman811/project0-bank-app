@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="47A17FFB-D7D3-C7FB-D749-CD0A7C9E2105" schemaObject="58FEC914-2F30-33CF-956A-EC321E2D7A55" name="BANK_ACCOUNTS">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>DFMASTER</sourceObjSchema>
+<sourceObjName>BANK_ACCOUNTS</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ACCOUNT_NUMBER" id="9199266F-9D66-8CFF-E868-D9F495B1DA23">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>BANK_ACCOUNTS</sourceObjSchema>
+<sourceObjName>ACCOUNT_NUMBER</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACCOUNT_BALANCE" id="E6E55824-D803-C25C-89B5-AB77845C337A">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>BANK_ACCOUNTS</sourceObjSchema>
+<sourceObjName>ACCOUNT_BALANCE</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_ID" id="2958F418-1CA9-1F59-2C9F-2266D7ACF251">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>BANK_ACCOUNTS</sourceObjSchema>
+<sourceObjName>USER_ID</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F797E7DB-E67A-ECA7-4EDC-57CC2588D54C" schemaObject="58FEC914-2F30-33CF-956A-EC321E2D7A55" name="BANK_ACCOUNTS_PK">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>DFMASTER</sourceObjSchema>
+<sourceObjName>SYS_C006875</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:49 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9199266F-9D66-8CFF-E868-D9F495B1DA23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

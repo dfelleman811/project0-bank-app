@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D908E92D-2721-327A-3CFB-46029C110F43" schemaObject="5D528F90-875F-A7F1-D5DB-B5F22C12D3FA" name="ACTOR_MOVIE">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>DFMASTER</sourceObjSchema>
+<sourceObjName>ACTOR_MOVIE</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ACTOR_ID" id="38D26C49-1F0F-2A95-FF03-3500DF7C546A">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_MOVIE</sourceObjSchema>
+<sourceObjName>ACTOR_ID</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4305C7BF-7FAC-0D37-376C-2FCD4CB9DBE2" referredColumn="19535B8B-FE5E-DED5-6BD9-29BE98A57696"/>
+</associations>
+</Column>
+<Column name="MOVIE_ID" id="5A2D3041-C45E-EBA3-9046-8968EB00E9E3">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_MOVIE</sourceObjSchema>
+<sourceObjName>MOVIE_ID</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4A9587BA-E7F8-BC67-29E5-1215EF54B036" referredColumn="9EC74B80-4A92-3248-ADEC-5A89C8BB83D9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FB171563-AA48-62B3-D7DB-3499898B1B6F" name="FK_ACTORMOVIE_ACTORS">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:39 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="38D26C49-1F0F-2A95-FF03-3500DF7C546A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1C9DF617-90FC-B56C-FA45-B753D2A46EFD" name="FK_ACTORMOVIE_MOVIE">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:39 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A2D3041-C45E-EBA3-9046-8968EB00E9E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

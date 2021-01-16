@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="ACTOR_STATS" directorySegmentName="seg_0" id="BA68BF6C-1BB5-22CE-AFAE-C410765CD459">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>5D528F90-875F-A7F1-D5DB-B5F22C12D3FA</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>EE23B1E8-7721-A9BC-39C6-50F6E6EBBC23</segment>
+<tableSpace>0A332AB0-A3C0-4A32-0345-68966C488CB0</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ACTOR_ID" id="29C83CF8-15FA-EF5A-3ABD-45363ACD6C60">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ALIVE" id="4CCDEDCF-9246-855A-3032-6A642C64EE1E">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BIRTHDAY" id="A35FF0DF-208D-59C2-81FE-B056AA228BF2">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RELATIONSHIP_STATUS" id="B03FE0B7-D44D-167F-2FB9-67E0DAD8F505">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="AGE" id="DC940617-734D-96CE-C563-55545571F3D5">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HEIGHT" id="E9E9FAE4-43D6-FBBC-02D3-AFCC2FC5D00B">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PARENTS" id="EC490BEF-8D24-C760-A999-10352BC25FA8">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HAIR_COLOR" id="F88682ED-8980-DADF-04BE-219CD2912C44">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_ACTORSTATS_ACTORS" id="A72C6CD0-597C-F26A-3260-61D369583B4C">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:39 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev12c>

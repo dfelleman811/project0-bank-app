@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4A9587BA-E7F8-BC67-29E5-1215EF54B036" containerWithKeyObject="D908E92D-2721-327A-3CFB-46029C110F43" localFKIndex="1C9DF617-90FC-B56C-FA45-B753D2A46EFD" name="FK_ACTORMOVIE_MOVIE">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>DFMASTER</sourceObjSchema>
+<sourceObjName>FK_ACTORMOVIE_MOVIE</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:39 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<referredTableLongName>DFMASTER.MOVIES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5D1EF7F0-3628-5B24-C5FF-1D57106687F5</referredTableID>
+<keyObject>05358E15-187A-3AAF-8B22-0ADD022FD5C0</keyObject>
+<referredKeyID>05358E15-187A-3AAF-8B22-0ADD022FD5C0</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>MOVIE_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

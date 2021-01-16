@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="ACTORS" directorySegmentName="seg_0" id="4F2D0DA3-426F-7D33-1AD2-67CF9D5CBE72">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>5D528F90-875F-A7F1-D5DB-B5F22C12D3FA</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>EE23B1E8-7721-A9BC-39C6-50F6E6EBBC23</segment>
+<tableSpace>0A332AB0-A3C0-4A32-0345-68966C488CB0</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ACTOR_ID" id="19535B8B-FE5E-DED5-6BD9-29BE98A57696">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME_VAR" id="AEE01FE7-0ABA-53C6-EA68-159BB2A38990">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NET_WORTH" id="D05468BD-535C-5679-69BD-B27EC999EAB6">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="ACTORS_PK" id="02565C95-9807-B11C-08EF-781AA8E278B0">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:38 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>5D528F90-875F-A7F1-D5DB-B5F22C12D3FA</schemaObject>
+<segment>C04A3884-D5EE-E350-FE37-6E14AABA0EBB</segment>
+<tableSpace>0A332AB0-A3C0-4A32-0345-68966C488CB0</tableSpace>
+<indexSegment>C04A3884-D5EE-E350-FE37-6E14AABA0EBB</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="ACTORS_NAME_VAR_UN" id="6B9CE487-9987-5204-1F96-6652DEF40A09">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:38 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>5D528F90-875F-A7F1-D5DB-B5F22C12D3FA</schemaObject>
+<segment>C04A3884-D5EE-E350-FE37-6E14AABA0EBB</segment>
+<tableSpace>0A332AB0-A3C0-4A32-0345-68966C488CB0</tableSpace>
+<indexSegment>C04A3884-D5EE-E350-FE37-6E14AABA0EBB</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev12c>
