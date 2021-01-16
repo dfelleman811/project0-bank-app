@@ -15,7 +15,7 @@ public interface BankAccountDAO {
 	// READ
 	public void viewBalance(User user);
 	
-	public Collection<BankAccount> getBankAccountById(int userId);
+	public BankAccount getBankAccountById(int userId);
 	
 	public Collection<BankAccount> getAllUserBankAccountsById(int userId);
 	

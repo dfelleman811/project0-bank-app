@@ -19,7 +19,7 @@ import dev.felleman.entities.User;
 public class BankAccountDAOImpl implements BankAccountDAO {
 	
 	// Create a map where account information will be stored (linked to user id) - this will eventually become the RDS database
-	private Multimap<Integer, BankAccount> bank_account_table = HashMultimap.create();
+	private Map<Integer, BankAccount> bank_account_table = new HashMap<Integer, BankAccount>();
 
 	private static UserDAO userDAO = new UserDAOImpl();
 	
@@ -32,7 +32,7 @@ public class BankAccountDAOImpl implements BankAccountDAO {
 		account.setUserId(user.getUserId());
 		account.setAccountNumber(++bankAccountNumberTracker);
 		
-		bank_account_table.put(user.getUserId(), account);
+		bank_account_table.put(account.getAccountNumber(), account);
 		
 		return account;
 	}
@@ -53,9 +53,11 @@ public class BankAccountDAOImpl implements BankAccountDAO {
 	}
 	
 	@Override
-	public Collection<BankAccount> getBankAccountById(int userId) {
+	public BankAccount getBankAccountById(int userId) {
 		
-		Collection<BankAccount> account = bank_account_table.get(userId);
+		userDAO.getUserById(userId)
+		
+		BankAccount account = bank_account_table.get(userId);
 		return account;
 	}
 	
