@@ -4,15 +4,19 @@ import java.util.List;
 
 import dev.felleman.daos.BankAccountDAO;
 import dev.felleman.daos.BankAccountDAOImpl;
+import dev.felleman.daos.TransactionDAO;
+import dev.felleman.daos.TransactionDAOImpl;
 import dev.felleman.daos.UserDAO;
 import dev.felleman.daos.UserDAOImpl;
 import dev.felleman.entities.BankAccount;
+import dev.felleman.entities.Transaction;
 import dev.felleman.entities.User;
 
 public class BankAccountServicesImpl implements BankAccountServices {
 
 	public BankAccountDAO baDAO = new BankAccountDAOImpl();
 	public UserDAO userDAO = new UserDAOImpl();
+	public TransactionDAO tDAO = new TransactionDAOImpl();
 	
 	@Override
 	public boolean openAccount(User user) {
@@ -55,6 +59,8 @@ public class BankAccountServicesImpl implements BankAccountServices {
 		BankAccount acct = baDAO.getBankAccountByAccountNumber(account.getAccountNumber());
 		acct.setAccountBalance(account.getAccountBalance() + amount);
 		baDAO.updateAccount(acct);
+		Transaction t = new Transaction(account.getAccountNumber(), "deposit", amount);
+		tDAO.createTransaction(t);
 		return acct;
 	}
 

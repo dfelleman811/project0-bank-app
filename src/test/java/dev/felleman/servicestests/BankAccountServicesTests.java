@@ -73,7 +73,8 @@ class BankAccountServicesTests {
 	@Test
 	void depositTest() {
 		
-		BankAccount acct = baServ.deposit(baDAO.getBankAccountById(6), 1000);
+		BankAccount acct = baServ.deposit(baDAO.getBankAccountById(7), 1000);
+		
 		
 		Assertions.assertEquals(2000, acct.getAccountBalance());
 	}

@@ -1,6 +1,6 @@
 package dev.felleman.entities;
 
-import java.sql.Date;
+import java.util.Date;
 import java.time.LocalDateTime;
 
 public class Transaction {

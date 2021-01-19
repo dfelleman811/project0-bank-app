@@ -6,10 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import dev.felleman.entities.BankAccount;
+import dev.felleman.entities.Transaction;
 import dev.felleman.entities.User;
 import dev.felleman.util.JDBCConnection;
 
@@ -19,6 +19,8 @@ public class BankAccountDAOImpl implements BankAccountDAO {
 	public static Connection conn = JDBCConnection.getConnection();
 
 	public static UserDAO userDAO = new UserDAOImpl();
+	
+	public static TransactionDAO tDAO = new TransactionDAOImpl();
 	
 
 	@Override

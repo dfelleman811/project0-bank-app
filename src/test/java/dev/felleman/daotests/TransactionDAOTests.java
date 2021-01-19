@@ -1,6 +1,7 @@
 package dev.felleman.daotests;
 
-import java.sql.Date;
+import java.util.Date;
+import java.time.Instant;
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Assertions;
@@ -19,11 +20,12 @@ class TransactionDAOTests {
 		
 		Transaction t = new Transaction();
 		
-		t.setAccountNumber(100021);
+		t.setAccountNumber(100006);
+		t.setDatetime(Date.from(Instant.now()));
 		t.setTransactionType("deposit");
 		t.setTransactionAmount(500);
 		t.setAccountBalance(1500);
-		t.setUserId(21);
+		t.setUserId(6);
 		
 		tDAO.createTransaction(t);
 		
@@ -39,7 +41,7 @@ class TransactionDAOTests {
 		
 		t.setAccountNumber(100021);
 		t.setTransactionType("deposit");
-		t.setDatetime(Date.valueOf(LocalDate.now()));
+		//t.setDatetime(Date.valueOf(LocalDate.now()));
 		t.setTransactionAmount(500);
 		t.setAccountBalance(1500);
 		t.setUserId(21);

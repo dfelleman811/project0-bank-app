@@ -98,27 +98,26 @@ call add_transaction(100023, 'withdrawal', 500, 0, 1);
 
 select * from transactions;
 
+drop trigger log_transaction;
 
 
 
-
-
-create or replace trigger log_transcation
+create or replace trigger log_transaction
 for update of account_balance
 on bank_accounts
 compound trigger
 
-    account_num number(10) := account_number;
+    account_num number(10);
     t_type varchar2(20);
     t_amount number(10);
     acct_balance number(10);
     u_id number(10);
     
      
-before each row is
+before statement is
 begin
      select account_number, user_id into account_num, u_id from bank_accounts where account_number = account_number;
-end before each row;
+end before statement;
 
 after each row is
 begin
@@ -141,6 +140,8 @@ end after each row;
 
 end;
 /
+
+drop trigger log_transaction;
 
 
 select * from bank_accounts;
