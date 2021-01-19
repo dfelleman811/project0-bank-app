@@ -1,0 +1,159 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BA68BF6C-1BB5-22CE-AFAE-C410765CD459" schemaObject="5D528F90-875F-A7F1-D5DB-B5F22C12D3FA" name="ACTOR_STATS">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>DFMASTER</sourceObjSchema>
+<sourceObjName>ACTOR_STATS</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ACTOR_ID" id="29C83CF8-15FA-EF5A-3ABD-45363ACD6C60">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_STATS</sourceObjSchema>
+<sourceObjName>ACTOR_ID</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D043BF7-B36B-AEF1-6AC8-690DE4727C03" referredColumn="19535B8B-FE5E-DED5-6BD9-29BE98A57696"/>
+</associations>
+</Column>
+<Column name="AGE" id="DC940617-734D-96CE-C563-55545571F3D5">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_STATS</sourceObjSchema>
+<sourceObjName>AGE</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HEIGHT" id="E9E9FAE4-43D6-FBBC-02D3-AFCC2FC5D00B">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_STATS</sourceObjSchema>
+<sourceObjName>HEIGHT</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HAIR_COLOR" id="F88682ED-8980-DADF-04BE-219CD2912C44">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_STATS</sourceObjSchema>
+<sourceObjName>HAIR_COLOR</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 BYTE</dataTypeSize>
+<ownDataTypeParameters>25 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PARENTS" id="EC490BEF-8D24-C760-A999-10352BC25FA8">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_STATS</sourceObjSchema>
+<sourceObjName>PARENTS</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RELATIONSHIP_STATUS" id="B03FE0B7-D44D-167F-2FB9-67E0DAD8F505">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_STATS</sourceObjSchema>
+<sourceObjName>RELATIONSHIP_STATUS</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<constraintName>REL_STATUS</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;Dating&apos;" description=""/>
+<valueDef value="&apos;Married&apos;" description=""/>
+<valueDef value="&apos;Single&apos;" description=""/>
+</listOfValues>
+<ownDataTypeParameters>25 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALIVE" id="4CCDEDCF-9246-855A-3032-6A642C64EE1E">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_STATS</sourceObjSchema>
+<sourceObjName>ALIVE</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BIRTHDAY" id="A35FF0DF-208D-59C2-81FE-B056AA228BF2">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>ACTOR_STATS</sourceObjSchema>
+<sourceObjName>BIRTHDAY</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A72C6CD0-597C-F26A-3260-61D369583B4C" name="FK_ACTORSTATS_ACTORS">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:39 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29C83CF8-15FA-EF5A-3ABD-45363ACD6C60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

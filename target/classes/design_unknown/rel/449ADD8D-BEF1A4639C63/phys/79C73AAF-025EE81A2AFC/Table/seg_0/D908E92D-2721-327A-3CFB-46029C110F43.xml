@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="ACTOR_MOVIE" directorySegmentName="seg_0" id="D908E92D-2721-327A-3CFB-46029C110F43">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>5D528F90-875F-A7F1-D5DB-B5F22C12D3FA</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>EE23B1E8-7721-A9BC-39C6-50F6E6EBBC23</segment>
+<tableSpace>0A332AB0-A3C0-4A32-0345-68966C488CB0</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ACTOR_ID" id="38D26C49-1F0F-2A95-FF03-3500DF7C546A">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MOVIE_ID" id="5A2D3041-C45E-EBA3-9046-8968EB00E9E3">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_ACTORMOVIE_MOVIE" id="1C9DF617-90FC-B56C-FA45-B753D2A46EFD">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:39 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_ACTORMOVIE_ACTORS" id="FB171563-AA48-62B3-D7DB-3499898B1B6F">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:39 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev12c>

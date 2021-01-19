@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="DFMASTER" directorySegmentName="seg_0" id="58FEC914-2F30-33CF-956A-EC321E2D7A55">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</SchemaObject>

@@ -1,9 +1,8 @@
 package dev.felleman.daotests;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.HashSet;
-import java.util.Set;
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,106 +13,178 @@ import dev.felleman.daos.UserDAO;
 import dev.felleman.daos.UserDAOImpl;
 import dev.felleman.entities.BankAccount;
 import dev.felleman.entities.User;
-import dev.felleman.services.UserServices;
-import dev.felleman.services.UserServicesImpl;
+import dev.felleman.util.JDBCConnection;
 
 class BankAccountDaoTests {
 	
-	UserDAO uDAO = new UserDAOImpl();
 	BankAccountDAO bankAccountDAO = new BankAccountDAOImpl();
-	UserServices uServ = new UserServicesImpl();
+	UserDAO userDAO = new UserDAOImpl();
+	Connection conn = JDBCConnection.getConnection();
 
 	@Test
 	void openAccountTest() {
+//		BankAccount acct = new BankAccount();
+//		acct.setUserId(4);
+//		acct.setAccountNumber(100002);
+		User user = userDAO.getUserById(8);
+		bankAccountDAO.openAccount(user);
 		
-		User user = uDAO.createUser("Daniel", "Felleman", "dfelleman", "password");
+		User user6 = userDAO.getUserById(6);
+		bankAccountDAO.openAccount(user6);
 		
-		BankAccount act = bankAccountDAO.openAccount(user);
+		User user7 = userDAO.getUserById(7);
+		bankAccountDAO.openAccount(user7);
 		
-		User user2 = uDAO.createUser("Matthew", "Felleman", "mfelleman", "alsopassword");
-		
-		BankAccount act2 = bankAccountDAO.openAccount(user2);
-		
-		Assertions.assertEquals(act, bankAccountDAO.getBankAccountById(user.getUserId()));
-		Assertions.assertEquals(act2, bankAccountDAO.getBankAccountById(user2.getUserId()));
+		//Assertions.assertEquals(acct, bankAccountDAO.getBankAccountById(user.getUserId()));
 		
 	}
 	
-	
-	@Test
-	void viewBalanceTest() {
-		User user = uDAO.createUser("Daniel", "Felleman", "dfelleman", "password");
-		BankAccount account = bankAccountDAO.openAccount(user);
-		bankAccountDAO.deposit(account, 500);
-		BankAccount account2 = bankAccountDAO.openAccount(user);
-		bankAccountDAO.deposit(account2, 2000);
-		
-		User user2 = uDAO.createUser("George", "Justin", "gmanj", "password");
-		BankAccount account3 = bankAccountDAO.openAccount(user2);
-		bankAccountDAO.deposit(account3, 5000);
-		BankAccount account4 = bankAccountDAO.openAccount(user2);
-		bankAccountDAO.deposit(account4, 1500);
-		
-		
-		
-		bankAccountDAO.viewBalance(user2);
-		
-	}
 	
 	@Test
-	void depositTest() {
-		User user = uDAO.createUser("Daniel", "Felleman", "dfelleman", "password");
-		BankAccount account = bankAccountDAO.openAccount(user);
-		account.setAccountBalance(500);
+	void getBalanceTest() {
+		BankAccount acct = new BankAccount();
+		acct.setUserId(4);
+		acct.setAccountNumber(100002);
 		
-		bankAccountDAO.deposit(account, 1000);
+		Assertions.assertEquals(acct, bankAccountDAO.getBalance(acct));
 		
-		Assertions.assertEquals(1500, account.getAccountBalance());
 	}
 	
-	@Test
-	void withdrawTest() {
-		User user = uDAO.createUser("Daniel", "Felleman", "dfelleman", "password");
-		
-		BankAccount account = bankAccountDAO.openAccount(user);
-		account.setAccountBalance(500);
-		
-		bankAccountDAO.withdraw(account, 250);
-		
-		Assertions.assertEquals(250, account.getAccountBalance());
-	}
+//	@Test // test in services
+//	void depositTest() {
+//		BankAccount acct = new BankAccount();
+//		acct.setUserId(4);
+//		acct.setAccountNumber(100002);
+//		
+//		
+//		Assertions.assertEquals(1500, account.getAccountBalance());
+//	}
+//	
+//	@Test
+//	void withdrawTest() {
+//		User user = uDAO.createUser("Daniel", "Felleman", "dfelleman", "password");
+//		
+//		BankAccount account = bankAccountDAO.openAccount(user);
+//		account.setAccountBalance(500);
+//		
+//		bankAccountDAO.withdraw(account, 250);
+//		
+//		Assertions.assertEquals(250, account.getAccountBalance());
+//	}
 
 	@Test
+	void getBankAccountByAccountNumberTest() {
+	
+		BankAccount acct = new BankAccount();
+		acct.setUserId(4);
+		acct.setAccountNumber(100002);
+		
+		Assertions.assertEquals(acct, bankAccountDAO.getBankAccountByAccountNumber(100002));
+		
+		
+	}
+	
+	@Test
+	void getBankAccountByIdTest() {
+		BankAccount acct = new BankAccount();
+		acct.setUserId(4);
+		acct.setAccountNumber(100002);
+		
+		Assertions.assertEquals(acct, bankAccountDAO.getBankAccountById(4));
+		
+	}
+	
+	
+	@Test
 	void getAllUserBankAccountsByIdTest() {
-		User user = uDAO.createUser("Daniel", "Felleman", "dfelleman", "password");
-		BankAccount account = bankAccountDAO.openAccount(user);
-		BankAccount account2 = bankAccountDAO.openAccount(user);
+		List<BankAccount> bankAccounts = new ArrayList<BankAccount>();
+		BankAccount ba1 = bankAccountDAO.getBankAccountByAccountNumber(100002);
+		BankAccount ba2 = bankAccountDAO.getBankAccountByAccountNumber(100003);
+		bankAccounts.add(ba1);
+		bankAccounts.add(ba2);
 		
-		User user2 = uDAO.createUser("George", "Justin", "gmanj", "password");
-		BankAccount account3 = bankAccountDAO.openAccount(user2);
-		BankAccount account4 = bankAccountDAO.openAccount(user2);
+		Assertions.assertEquals(bankAccounts, bankAccountDAO.getAllUserBankAccountsById(4));
 		
-		System.out.println(bankAccountDAO.getAllUserBankAccountsById(user.getUserId()));
-		
-		//System.out.println(bankAccountDAO.getAllUserBankAccountsById(user.getUserId()));
-		
-//		Set<BankAccount> bankAccounts = new HashSet<BankAccount>();
-//		
-//		bankAccounts.add(account);
-//		bankAccounts.add(account2);
-//		bankAccounts.add(account3);
-//		bankAccounts.add(account4);
-//		
-//		for (BankAccount act : bankAccounts) {
-//			if (act.getUserId() == user.getUserId()) {
-//				System.out.println(act);
-//			}
-//		}
-		//System.out.println(bankAccounts);
 	}
-		@Test
-		void getBankAccountByIdTest() {
-			
-		}
+	
+	@Test
+	void getAllBankAccountsTest() {
+		List<BankAccount> bankAccounts = new ArrayList<BankAccount>();
+		
+		BankAccount ba1 = bankAccountDAO.getBankAccountByAccountNumber(100001);
+		
+		BankAccount ba2 = bankAccountDAO.getBankAccountByAccountNumber(100002);
+		
+		BankAccount ba3 = bankAccountDAO.getBankAccountByAccountNumber(100003);
+		
+		bankAccounts.add(ba1);
+		bankAccounts.add(ba2);
+		bankAccounts.add(ba3);
+		
+		Assertions.assertEquals(bankAccounts, bankAccountDAO.getAllBankAccounts());
 	}
+	
+	@Test
+	void updateAccountTest() {
+		
+		BankAccount ba = bankAccountDAO.getBankAccountByAccountNumber(100001);
+		
+		ba.setAccountBalance(500);
+		
+		bankAccountDAO.updateAccount(ba);
+		
+		Assertions.assertEquals(500, bankAccountDAO.getBalance(ba).getAccountBalance());
+		
+	}
+	
+	@Test
+	void closeAccountTest() {
+		List<BankAccount> bankAccounts = new ArrayList<BankAccount>();
+		
+		//BankAccount ba1 = bankAccountDAO.getBankAccountByAccountNumber(100001);
+		//BankAccount ba4 = bankAccountDAO.getBankAccountByAccountNumber(100003);
+		//BankAccount ba5 = bankAccountDAO.getBankAccountByAccountNumber(100004);
+		//BankAccount ba8 = bankAccountDAO.getBankAccountByAccountNumber(100005);
+		BankAccount ba6 = bankAccountDAO.getBankAccountByAccountNumber(100006);
+		BankAccount ba7 = bankAccountDAO.getBankAccountByAccountNumber(100007);
+		
+		
+		//bankAccounts.add(ba1);
+		//bankAccounts.add(ba4);
+		//bankAccounts.add(ba5);
+		//bankAccounts.add(ba8);
+		bankAccounts.add(ba6);
+		bankAccounts.add(ba7);
+		
+		
+		BankAccount acct = bankAccountDAO.getBankAccountByAccountNumber(100005);
+		bankAccountDAO.closeAccount(acct);
+		
+		
+		Assertions.assertEquals(bankAccounts, bankAccountDAO.getAllBankAccounts());
+		
+		
+		
+	}
+		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

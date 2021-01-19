@@ -10,25 +10,27 @@ import dev.felleman.entities.User;
 public interface BankAccountDAO {
 	
 	// CREATE
-	public BankAccount openAccount(User user); // do I want these to return a User? 
+	public boolean openAccount(User user); // do I want these to return a User? 
 	
 	// READ
-	public void viewBalance(User user);
+	public BankAccount getBalance(BankAccount account);
+	
+	public BankAccount getBankAccountByAccountNumber(int accountNumber);
 	
 	public BankAccount getBankAccountById(int userId);
 	
-	public Collection<BankAccount> getAllUserBankAccountsById(int userId);
+	public List<BankAccount> getAllUserBankAccountsById(int userId);
 	
 	public List<BankAccount> getAllBankAccounts();
 	
 	// UPDATE
-	public BankAccount withdraw(BankAccount account, double amount); // these should go in services... or are they technically updating an account?
-	
-	public BankAccount deposit(BankAccount account, double amount);
+//	public BankAccount withdraw(BankAccount account, double amount); // these should go in services... or are they technically updating an account?
+//	
+//	public BankAccount deposit(BankAccount account, double amount);
 
 	
-	public BankAccount updateAccount(BankAccount account);
+	public boolean updateAccount(BankAccount account);
 	
 	// DELETE
-	public BankAccount closeAccount(BankAccount account);
+	public boolean closeAccount(BankAccount account);
 }

@@ -1,5 +1,6 @@
 package dev.felleman.daos;
 
+import java.util.List;
 import java.util.Set;
 
 import dev.felleman.entities.User;
@@ -15,9 +16,9 @@ import dev.felleman.entities.User;
 public interface UserDAO {
 	
 	// CREATE
-	public User createUser(String firstName, String lastName, String username, String password);
+	public boolean createUser(User user);
 	
-	public User setPassword(User user, String password);
+	//public User setPassword(User user, String password); more of a user services anyways
 	
 	
 	// READ
@@ -27,17 +28,15 @@ public interface UserDAO {
 	
 	//public int getAccountById(int accountNumer);
 	
-	public Set<User> getAllUsers();
-	
-	
+	public List<User> getAllUsers();
 	
 	
 	// UPDATE
-	public User updateUser(User user);
+	public boolean updateUser(User user);
 	
 	
 	// DELETE
-	public String deleteUser(User user);
+	public boolean deleteUser(User user);
 	
 	
 	

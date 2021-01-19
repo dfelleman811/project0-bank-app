@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="BANK_ACCOUNTS" directorySegmentName="seg_0" id="47A17FFB-D7D3-C7FB-D749-CD0A7C9E2105">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>58FEC914-2F30-33CF-956A-EC321E2D7A55</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>5FDBC1DC-3851-D6A7-A883-36A2FF16279F</segment>
+<tableSpace>A5FFF5CE-897B-24A1-5EFA-007643C81202</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="USER_ID" id="2958F418-1CA9-1F59-2C9F-2266D7ACF251">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACCOUNT_NUMBER" id="9199266F-9D66-8CFF-E868-D9F495B1DA23">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACCOUNT_BALANCE" id="E6E55824-D803-C25C-89B5-AB77845C337A">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="BANK_ACCOUNTS_PK" id="F797E7DB-E67A-ECA7-4EDC-57CC2588D54C">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:49 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>58FEC914-2F30-33CF-956A-EC321E2D7A55</schemaObject>
+<segment>F7ABB3AF-A602-4A5B-B832-FFB2EE2CCC91</segment>
+<tableSpace>A5FFF5CE-897B-24A1-5EFA-007643C81202</tableSpace>
+<indexSegment>F7ABB3AF-A602-4A5B-B832-FFB2EE2CCC91</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

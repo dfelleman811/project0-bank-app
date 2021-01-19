@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableSpaceOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableSpaceOraclev10g" name="USERS" directorySegmentName="seg_0" id="A5FFF5CE-897B-24A1-5EFA-007643C81202">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>DFMASTER</sourceObjSchema>
+<sourceObjName>USERS</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<emUniformSize>0</emUniformSize>
+<extentManagement>LOCAL</extentManagement>
+</TableSpaceOraclev10g>

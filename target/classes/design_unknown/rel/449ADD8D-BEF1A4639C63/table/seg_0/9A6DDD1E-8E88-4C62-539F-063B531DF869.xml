@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9A6DDD1E-8E88-4C62-539F-063B531DF869" schemaObject="5D528F90-875F-A7F1-D5DB-B5F22C12D3FA" name="AWARDS">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>DFMASTER</sourceObjSchema>
+<sourceObjName>AWARDS</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="AWARD_ID" id="5AFDD104-2E3A-C30F-C464-34942A235EC4">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>AWARDS</sourceObjSchema>
+<sourceObjName>AWARD_ID</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AWARD_TITLE" id="E3848265-17E2-6F50-FCE8-2BD010C4652F">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>AWARDS</sourceObjSchema>
+<sourceObjName>AWARD_TITLE</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="YEAR_GIVEN" id="23288D8E-24D7-C36A-C9D8-1DA2FD1C6E18">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>AWARDS</sourceObjSchema>
+<sourceObjName>YEAR_GIVEN</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACTOR_ID" id="CCF01015-F22E-BA9D-D558-1D4134E0B09D">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>AWARDS</sourceObjSchema>
+<sourceObjName>ACTOR_ID</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F2B10644-12A1-5F75-5344-DEA658452B31" referredColumn="19535B8B-FE5E-DED5-6BD9-29BE98A57696"/>
+</associations>
+</Column>
+<Column name="MOVIE_ID" id="3892B554-DACF-66BB-AE20-CD22AF76FCA6">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>AWARDS</sourceObjSchema>
+<sourceObjName>MOVIE_ID</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A44CDE75-1F62-2DE4-74F6-342E62DF5683" referredColumn="9EC74B80-4A92-3248-ADEC-5A89C8BB83D9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2AD820F6-6631-983E-52F1-B27DC30160EC" schemaObject="5D528F90-875F-A7F1-D5DB-B5F22C12D3FA" name="AWARDS_PK">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>DFMASTER</sourceObjSchema>
+<sourceObjName>SYS_C006840</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:38 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5AFDD104-2E3A-C30F-C464-34942A235EC4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="739AF263-736B-AF3F-94E9-5A34EC7A867B" name="FK_AWARD_ACTOR">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:39 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CCF01015-F22E-BA9D-D558-1D4134E0B09D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9A16EB07-2430-B336-9961-6F784E603A38" name="FK_AWARD_MOVIE">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:39 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3892B554-DACF-66BB-AE20-CD22AF76FCA6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

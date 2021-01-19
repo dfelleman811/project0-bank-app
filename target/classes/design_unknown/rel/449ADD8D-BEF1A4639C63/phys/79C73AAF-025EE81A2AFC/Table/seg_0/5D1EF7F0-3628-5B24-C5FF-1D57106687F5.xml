@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="MOVIES" directorySegmentName="seg_0" id="5D1EF7F0-3628-5B24-C5FF-1D57106687F5">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>5D528F90-875F-A7F1-D5DB-B5F22C12D3FA</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>EE23B1E8-7721-A9BC-39C6-50F6E6EBBC23</segment>
+<tableSpace>0A332AB0-A3C0-4A32-0345-68966C488CB0</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="MOVIE_DESC" id="5D8A1A32-627A-1C84-B8BF-747AEB737C92">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MOVIE_ID" id="9EC74B80-4A92-3248-ADEC-5A89C8BB83D9">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RUNTIME" id="BE199DF2-DD8A-6731-2200-5DEA2FC2D0AF">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TITLE" id="F3138862-D09D-B657-EC58-37DEFE6F7BCC">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="MOVIES_PK" id="05358E15-187A-3AAF-8B22-0ADD022FD5C0">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:38 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>5D528F90-875F-A7F1-D5DB-B5F22C12D3FA</schemaObject>
+<segment>C04A3884-D5EE-E350-FE37-6E14AABA0EBB</segment>
+<tableSpace>0A332AB0-A3C0-4A32-0345-68966C488CB0</tableSpace>
+<indexSegment>C04A3884-D5EE-E350-FE37-6E14AABA0EBB</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

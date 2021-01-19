@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableSpaceOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableSpaceOraclev10g" name="USERS" directorySegmentName="seg_0" id="0A332AB0-A3C0-4A32-0345-68966C488CB0">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjSchema>DFMASTER</sourceObjSchema>
+<sourceObjName>USERS</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-14 17:58:37 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<dsInitialExtent>65536</dsInitialExtent>
+<dsMaxExtents>2147483645</dsMaxExtents>
+<emUniformSize>0</emUniformSize>
+<extentManagement>LOCAL</extentManagement>
+<minExtLen>65536</minExtLen>
+<dsCompression>NOCOMPRESS</dsCompression>
+<encrypt>NO</encrypt>
+<fileType>BIGFILE</fileType>
+<inMemory>NO</inMemory>
+<dataFiles>
+<DataFile class="oracle.dbtools.crest.model.design.storage.oracle.v10g.DataFileOraclev10g" name="o1_mf_users_hlrnko1q_.dbf" id="1B41C6F5-A775-0257-6FBE-F4BD7A2B74F7">
+<sourceConnName>dfDB1_Revature</sourceConnName>
+<sourceObjName>/rdsdbdata/db/ORCL_A/datafile/o1_mf_users_hlrnko1q_.dbf</sourceObjName>
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:17:52 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<autoextend>ON</autoextend>
+<fileName>/rdsdbdata/db/ORCL_A/datafile/o1_mf_users_hlrnko1q_.dbf</fileName>
+<maxSize>3</maxSize>
+<nextBlockSize>102400</nextBlockSize>
+<size>102400</size>
+</DataFile>
+</dataFiles>
+</TableSpaceOraclev10g>

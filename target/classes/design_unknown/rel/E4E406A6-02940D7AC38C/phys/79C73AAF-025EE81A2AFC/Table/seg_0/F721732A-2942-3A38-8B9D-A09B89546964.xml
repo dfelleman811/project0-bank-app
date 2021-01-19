@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="USER_ACCOUNTS" directorySegmentName="seg_0" id="F721732A-2942-3A38-8B9D-A09B89546964">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>58FEC914-2F30-33CF-956A-EC321E2D7A55</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>5FDBC1DC-3851-D6A7-A883-36A2FF16279F</segment>
+<tableSpace>A5FFF5CE-897B-24A1-5EFA-007643C81202</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PASSWORD" id="114ADFA5-060D-5EAF-1E29-62151A149047">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REGISTERED" id="2F41FB78-7C37-B88E-F380-FCE7757B9466">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="FIRST_NAME" id="8BE05AAD-D7FE-8B90-1257-2C4F5F14EE09">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USER_ID" id="984CBE50-C88A-86D1-6750-CF98E3472AA3">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LAST_NAME" id="C9856B60-7A5C-E3AD-9F11-DF614FE2DA86">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USERNAME" id="CD900EEF-A7BD-7104-D6CC-D81E3844F7DE">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ISSUPER" id="D5214E13-A2C8-028E-8AE5-4E262CE7816B">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOGGEDIN" id="DE50C1DA-4728-5F5E-310D-27BB8F0FB622">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:48 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="USER_ACCOUNTS_PK" id="8BEE9DD0-3AB1-D930-8C41-E346C5FA59B9">
+<createdBy>DanielFelleman</createdBy>
+<createdTime>2021-01-15 23:18:49 UTC</createdTime>
+<ownerDesignName>design_unknown</ownerDesignName>
+<schemaObject>58FEC914-2F30-33CF-956A-EC321E2D7A55</schemaObject>
+<segment>F7ABB3AF-A602-4A5B-B832-FFB2EE2CCC91</segment>
+<tableSpace>A5FFF5CE-897B-24A1-5EFA-007643C81202</tableSpace>
+<indexSegment>F7ABB3AF-A602-4A5B-B832-FFB2EE2CCC91</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

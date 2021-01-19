@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="SchemaObject" objectID="58FEC914-2F30-33CF-956A-EC321E2D7A55" name="DFMASTER" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.SchemaObject" propertyParentId="E4E406A6-772D-0CF3-2E7B-02940D7AC38C" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="47A17FFB-D7D3-C7FB-D749-CD0A7C9E2105" name="BANK_ACCOUNTS" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="E4E406A6-772D-0CF3-2E7B-02940D7AC38C" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="F721732A-2942-3A38-8B9D-A09B89546964" name="USER_ACCOUNTS" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="E4E406A6-772D-0CF3-2E7B-02940D7AC38C" propertySourceId="" propertyTargetId=""/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

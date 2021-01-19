@@ -1,6 +1,8 @@
 package dev.felleman.daotests;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.Assertions;
@@ -16,47 +18,59 @@ class UserDaoTests {
 
 	@Test 
 	void createUserTest() {
-		User user = userDAO.createUser("Dan", "Felleman", "dfelleman", "password");
+		User user = new User("Minerva", "McGonagall", "tabbygirl99", "youthree");
+		user.setUserId(8); // testing purposes only
+		user.setRegistered(1);
+		userDAO.createUser(user);
 		System.out.println(user);
 		
-		User user2 = userDAO.createUser("Greg", "Jordan", "gigi", "good");
+		User user2 = new User("James", "Potter", "prongs", "deaddead");
+		user2.setUserId(9); // testing purposes only
+		user2.setRegistered(1);
+		userDAO.createUser(user2);
 		System.out.println(user2);
+		
+		Assertions.assertEquals(user, userDAO.getUserById(8));
+		Assertions.assertEquals(user2, userDAO.getUserById(9));
+		
 	}
 
 	@Test 
 	void getUserByIdTest() {
-		User user = userDAO.createUser("Dan", "Felleman", "dfelleman", "jolly");
-		
-		
-		User user2 = userDAO.createUser("Johnny", "Bravo", "hairgel", "rocket");
-
+		User user = new User("Dan", "Felleman", "dfelleman", "password");
+		user.setUserId(1);
+		user.setRegistered(1);
 		User u = userDAO.getUserById(1);
 		
-		User u2 = userDAO.getUserById(2);
+		System.out.println(user);
+		System.out.println(u);
 		
-		Assertions.assertEquals(u, user);
-		
-		Assertions.assertEquals(u2,  user2);
-		
-		
+		Assertions.assertEquals(user, u);
+				
 	}
 	
 	@Test
 	void getUserByUsernameTest() {
-		User user = userDAO.createUser("Dan", "Felleman", "dfelleman", "jolly");
+		User user = new User("Dan", "Felleman", "dfelleman", "password");
+		user.setUserId(1);
+		user.setRegistered(1);
+		User u = userDAO.getUserByUsername("dfelleman");
 		
-		User u = userDAO.getUserByUsername(user.getUsername());
+		Assertions.assertEquals(user, u);
 		
-		Assertions.assertEquals(user.getUsername(), u.getUsername());
 	}
 	
 	@Test
 	void updateUserTest() {
-		User user = userDAO.createUser("Dan", "Felleman", "dfelleman", "password");
-
-		User updatedUser = userDAO.updateUser(user);
+		User user = userDAO.getUserById(1);
 		
-		// is this redundant?
+		// eventually I'll test Services but for now I'm doing manually
+		user.setPassword("newerPassword");
+		userDAO.updateUser(user);
+		
+		
+		Assertions.assertEquals("newerPassword", user.getPassword());
+
 	
 	}
 	
@@ -79,24 +93,24 @@ class UserDaoTests {
 	
  	@Test
 	void getAllUsersTest() {
-		User user = userDAO.createUser("Dan", "Felleman", "dfelleman", "password");
+		User user = userDAO.getUserById(1);
 		
-		User user2 = userDAO.createUser("Johnny", "Bravo", "hairgel", "mohawk");
-		
-		
-		User user3 = userDAO.createUser("Greg", "Bacon", "sizzle", "canadianbacon");
+		User user2 = userDAO.getUserById(2);
 		
 		
-		User user4 = userDAO.createUser("Timmy", "Big", "tiny", "willow");
+		User user3 = userDAO.getUserById(3);
 		
-		Set<User> getUserSetTest = new HashSet<User>();
 		
-		getUserSetTest.add(user);
-		getUserSetTest.add(user2);
-		getUserSetTest.add(user3);
-		getUserSetTest.add(user4);
+		User user4 = userDAO.getUserById(4);
 		
-		Assertions.assertEquals(getUserSetTest, userDAO.getAllUsers());
+		List<User> getUserListTest = new ArrayList<User>();
+		
+		getUserListTest.add(user);
+		getUserListTest.add(user2);
+		getUserListTest.add(user3);
+		getUserListTest.add(user4);
+		
+		Assertions.assertEquals(getUserListTest, userDAO.getAllUsers());
 		
 	}
  	
@@ -112,40 +126,39 @@ class UserDaoTests {
 // 		System.out.println(user);
 // 	}
 	
-	@Test
-	void setPasswordTest() {
-		User user = userDAO.createUser("Joni", "Mitchell", "caseofyou", "parkinglot");
-		
-		user.setPassword("password");
-		userDAO.updateUser(user);
-		
-		Assertions.assertEquals("password", user.getPassword());
-	}
 	
 	
  	@Test
 	void deleteUserTest() {
-		User user = userDAO.createUser("Dan", "Felleman", "dfelleman", "password");
+ 		User user = userDAO.getUserById(1);
+		User user3 = userDAO.getUserById(3);
+		User user4 = userDAO.getUserById(4);
+		User user5 = userDAO.getUserById(5);
+		User user6 = userDAO.getUserById(6);
+		User user7 = userDAO.getUserById(7);
+		User user8 = userDAO.getUserById(8);
+		User user9 = userDAO.getUserById(9);
 		
-		User user2 = userDAO.createUser("Johnny", "Bravo", "hairgel", "hello");
-		
-		User user3 = userDAO.createUser("Greg", "Bacon", "sizzle", "veganbacon");
-		
-		User user4 = userDAO.createUser("Timmy", "Big", "tiny", "fairyqueen");
-		
-		userDAO.deleteUser(user2); // need to refactor so that only super user can do this
+		userDAO.deleteUser(user3); // need to refactor so that only super user can do this
 		
 		// to make sure that the count still works
-		User user5 = userDAO.createUser("Harry", "Potter", "theChosenOne", "alohomora");
+		User user10 = new User("Hermione", "Granger", "TinaTimeTurner", "leviOsa");
+		user10.setUserId(10);
+		user10.setRegistered(1);
+		userDAO.createUser(user10);
 		
-		Set<User> getUserSetTest = new HashSet<User>();
+		List<User> getUserListTest = new ArrayList<User>();
 		
-		getUserSetTest.add(user);
-		getUserSetTest.add(user3);
-		getUserSetTest.add(user4);
-		getUserSetTest.add(user5);
+		getUserListTest.add(user);
+		getUserListTest.add(user4);
+		getUserListTest.add(user5);
+		getUserListTest.add(user6);
+		getUserListTest.add(user7);
+		getUserListTest.add(user8);
+		getUserListTest.add(user9);
+		getUserListTest.add(user10);
 		
-		Assertions.assertEquals(userDAO.getAllUsers(), getUserSetTest);
+		Assertions.assertEquals(getUserListTest, userDAO.getAllUsers());
 	}
  	
  	

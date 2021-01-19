@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="main_view" objectID="92A0D0FF-61AA-3B31-61E1-F884BF86CD4E" name="dfDB1_Revature" visible="false"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>
