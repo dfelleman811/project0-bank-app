@@ -197,6 +197,7 @@ public class BankApp {
 					case 4: {
 						tServ.viewAllUserTransactions(sessionUser);
 						mainMenuScreen();
+						break;
 					}
 					default: {
 					System.out.println("It seems you've either selected an option that doesn't exist, or that you don't have permission for.");

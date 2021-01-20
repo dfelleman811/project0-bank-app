@@ -111,6 +111,8 @@ begin
 
 end;
 /
+
+
 -- procedure to add transaction to transactions table
 
 create or replace procedure add_transaction(account_number number, transaction_type varchar2, transaction_amount number, account_balance number, user_id number)
@@ -121,7 +123,19 @@ end;
 /
 
 
+-- Create a super user
+call add_user_account('administrator', 'account', 'admin', 'admin');
 
+update user_accounts set issuper = 1 where username = 'admin';
+
+
+
+
+
+
+select * from user_accounts order by user_id;
+select * from bank_accounts order by account_number;
+select * from transactions order by transaction_id;
 
 
 
@@ -206,13 +220,3 @@ select * from transactions;
 
 
 
-
-
-select * from user_accounts order by user_id;
-select * from bank_accounts order by account_number;
-select * from transactions;
-
--- Create a super user
-call add_user_account('administrator', 'account', 'admin', 'admin');
-
-update user_accounts set issuper = 1 where username = 'admin';
