@@ -421,7 +421,7 @@ public class BankApp {
 		
 		baServ.deposit(account, amount);
 		
-		System.out.println("Transaction Successfull.");
+		System.out.println("Transaction Successful.");
 		
 		mainMenuScreen();
 	}
