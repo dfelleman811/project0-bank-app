@@ -60,7 +60,7 @@ public class BankAccountServicesImpl implements BankAccountServices {
 		acct.setAccountBalance(account.getAccountBalance() + amount);
 		baDAO.updateAccount(acct);
 		Transaction t = new Transaction(account.getAccountNumber(), "deposit", amount);
-		tDAO.createTransaction(t);
+		tDAO.createTransaction(t, account);
 		return acct;
 	}
 
@@ -69,6 +69,8 @@ public class BankAccountServicesImpl implements BankAccountServices {
 		BankAccount acct = baDAO.getBankAccountByAccountNumber(account.getAccountNumber());
 		acct.setAccountBalance(account.getAccountBalance() - amount);
 		baDAO.updateAccount(acct);
+		Transaction t = new Transaction(account.getAccountNumber(), "withdrawal", amount);
+		tDAO.createTransaction(t, account);
 		return acct;
 	}
 

@@ -5,12 +5,16 @@ import java.util.Scanner;
 
 import dev.felleman.daos.BankAccountDAO;
 import dev.felleman.daos.BankAccountDAOImpl;
+import dev.felleman.daos.TransactionDAO;
+import dev.felleman.daos.TransactionDAOImpl;
 import dev.felleman.daos.UserDAO;
 import dev.felleman.daos.UserDAOImpl;
 import dev.felleman.entities.BankAccount;
 import dev.felleman.entities.User;
 import dev.felleman.services.BankAccountServices;
 import dev.felleman.services.BankAccountServicesImpl;
+import dev.felleman.services.TransactionServices;
+import dev.felleman.services.TransactionServicesImpl;
 import dev.felleman.services.UserServices;
 import dev.felleman.services.UserServicesImpl;
 
@@ -28,21 +32,22 @@ public class BankApp {
 	// Scanner for collecting user input
 	private static Scanner scanner = new Scanner(System.in);
 	
-	
 	// Instantitate a DAO to track all changes
 	private static UserDAO userDAO = new UserDAOImpl();
-	
 	
 	// And a services impl for interacting with the accounts?
 	private static UserServices uServ = new UserServicesImpl();
 	
-	
 	// BankAccountDAO
 	private static BankAccountDAO baDAO = new BankAccountDAOImpl();
 	
-	
 	// BankAccountServices
 	private static BankAccountServices baServ = new BankAccountServicesImpl();
+	
+	// Transaction DAO
+	private static TransactionDAO tDAO = new TransactionDAOImpl();
+	
+	private static TransactionServices tServ = new TransactionServicesImpl();
 	
 	// Temp user object for if a user is logged in
 	private static User sessionUser = null;
@@ -104,13 +109,12 @@ public class BankApp {
 				System.out.println("Thank you for using our online banking application. See you soon!");
 				break;
 			}
-		
+			
 			default: {
 				// default implementation if input doesn't match any choices
 				System.out.println("Uh oh! It looks like you entered an invalid character. \nPlease only select from the options provided.");
 				welcomeScreen();
-			}
-				
+			}	
 			}
 		} else {
 			System.out.println("Uh oh! It looks like you entered an invalid character. \nPlease only select from the options provided.");
@@ -150,9 +154,10 @@ public class BankApp {
 						+ "\nPlease select from the below options:" + "\n"
 						+ "\t1. View Bank Accounts and Balances" + "\n"
 						+ "\t2. Open Bank Account" + "\n"
-						+ "\t3. Complete a Transaction" + "\n"
-						+ "\t4. Log Out" + "\n"
-						+ "\t5. Admin Menu";// TODO 
+						+ "\t3. Complete a transaction" + "\n"
+						+ "\t4. View All Your Transactions" + "\n"
+						+ "\t5. Log Out" + "\n\n"
+						+ "\t6. Admin Menu";// TODO 
 		System.out.println(mainMenu);
 
 		parseMenuInput(collectInput());
@@ -161,7 +166,7 @@ public class BankApp {
 	public static void parseMenuInput(int choice) {
 
 		// make sure they've entered a valid input
-			if (choice == 1 || choice == 2 || choice == 3) {
+			if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
 				switch (choice) {
 				
 					// view bank accounts
@@ -189,6 +194,10 @@ public class BankApp {
 						break;
 					}
 					
+					case 4: {
+						tServ.viewAllUserTransactions(sessionUser);
+						mainMenuScreen();
+					}
 					default: {
 					System.out.println("It seems you've either selected an option that doesn't exist, or that you don't have permission for.");
 					System.out.println("Please only select from the options shown by entering a single number.");
@@ -199,12 +208,12 @@ public class BankApp {
 		
 			}
 			
-			if (choice == 4) {
+			else if (choice == 5) {
 				uServ.logout(sessionUser);
 				welcomeScreen();
 			}
 			
-			if (choice == 5) {
+			else if (choice == 6) {
 				if (sessionUser.getIsSuper() == 1) {
 					adminMenuScreen();
 				} else {
@@ -227,7 +236,9 @@ public class BankApp {
 				+ "\t2. View All User Bank Accounts" + "\n"
 				+ "\t3. Edit User Accounts" + "\n"
 				+ "\t4. Edit User Bank Accounts" + "\n"
-				+ "\t5. Log Out"; 
+				+ "\t5. View All Bank Transactions" + "\n"
+				+ "\t6. Go Back to Main Menu" + "\n"
+				+ "\t7. Log Out"; 
 		System.out.println(adminMenu);
 		
 		parseAdminMenuInput(collectInput());
@@ -235,7 +246,7 @@ public class BankApp {
 	}
 	
 	public static void parseAdminMenuInput(int choice) {
-		if (choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5) {
+		if (choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6 || choice == 7) {
 			switch(choice) {
 			
 			case 1: {
@@ -267,12 +278,22 @@ public class BankApp {
 			}
 			
 			case 5: {
+				tServ.viewAllTransactions();
+				adminMenuScreen();
+				break;
+			}
+			
+			case 6: {
+				mainMenuScreen();
+				break;
+			}
+			case 7: {
 				uServ.logout(sessionUser);
 				welcomeScreen();
 				break;
 			}
 			default: {
-				//
+				welcomeScreen();
 			}
 			}
 		}
@@ -336,8 +357,9 @@ public class BankApp {
 							+ "\n Please select a transaction type." + "\n"
 							+ "1. Make a withdrawal" + "\n"
 							+ "2. Make a deposit" + "\n"
-							+ "3. Close account" + "\n"
-							+ "4. Return to Main Menu");
+							+ "3. View All Transactions" + "\n"
+							+ "4. Close account" + "\n"
+							+ "5. Return to Main Menu");
 		
 		
 		switch (collectInput()) {
@@ -353,11 +375,17 @@ public class BankApp {
 		}
 		
 		case 3: {
+			tServ.viewAllBankAccountTransactions(account);
+			mainMenuScreen();
+			break;
+			
+		}
+		case 4: {
 			closeAccountScreen(account);
 			break;
 		}
 		
-		case 4: {
+		case 5: {
 			mainMenuScreen();
 			break;
 		}
@@ -419,9 +447,10 @@ public class BankApp {
 		if (accountList.size() == 0) {
 			System.out.println("It seems you don't have any bank accounts with us yet. Please open a bank account to continue.");
 			mainMenuScreen();
+			return null;
 		}
 		
-		if (accountList.size() > 1) {
+		else if (accountList.size() > 1) {
 			System.out.println("Which account would you like to select?");
 			for (BankAccount acct : accountList) {
 				System.out.println((accountList.indexOf(acct) + 1) + ". " + acct.getAccountNumber());
@@ -480,7 +509,8 @@ public class BankApp {
 	public static void displayEditUserOptions(User targetUser) {
 		String options = "\n\t1. Edit Name, username, or password" + "\n"
 						+ "\t2. View transaction history" + "\n"
-						+ "\t3. Delete User Account";
+						+ "\t3. Delete User Account" + "\n"
+						+ "\t4. Go Back";
 		System.out.println(options);
 		
 		switch(collectInput()) {
@@ -492,7 +522,7 @@ public class BankApp {
 		}
 		
 		case 2: {
-			//view transaction history
+			tServ.viewAllUserTransactions(targetUser);
 			adminMenuScreen();
 			break;
 		}
@@ -504,6 +534,11 @@ public class BankApp {
 			if (choice == "Y") {
 				userDAO.deleteUser(targetUser);
 			}
+			adminMenuScreen();
+			break;
+		}
+		
+		case 4: {
 			adminMenuScreen();
 			break;
 		}
@@ -522,7 +557,8 @@ public class BankApp {
 		System.out.println("What would you like to edit?");
 		System.out.println("\n\t1. Edit First or Last Name" + "\n"
 							+ "\t2. Edit User's username" + "\n"
-							+ "\t3. Edit User's password");
+							+ "\t3. Edit User's password" + "\n"
+							+ "\t4. Go Back");
 		
 		switch(collectInput()) {
 		
@@ -581,6 +617,11 @@ public class BankApp {
 			break;
 		}
 		
+		case 4: {
+			displayEditUserOptions(targetUser);
+			break;
+		}
+		
 		default: {
 			adminMenuScreen();
 			break;
@@ -594,14 +635,15 @@ public class BankApp {
 		
 		String options = "\n\t1. View Transaction History" + "\n"
 						+ "\t2. Edit Account Balance" + "\n"
-						+ "\t3. Close Account";
+						+ "\t3. Close Account" + "\n"
+						+ "\t4. Go Back.";
 		
 		System.out.println(options);
 		
 		switch(collectInput()) {
 		
 		case 1: {
-			//View Transaction History
+			tServ.viewAllBankAccountTransactions(targetBankAccount);
 			adminMenuScreen();
 			break;
 		}
@@ -610,6 +652,16 @@ public class BankApp {
 			editAccount(targetBankAccount);
 			adminMenuScreen();
 			break;
+		}
+		
+		case 3: {
+			baServ.closeAccount(targetBankAccount);
+			adminMenuScreen();
+			break;
+		}
+		
+		case 4: {
+			
 		}
 		}
 	}

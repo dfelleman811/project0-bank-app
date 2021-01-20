@@ -74,21 +74,6 @@ class UserDaoTests {
 	
 	}
 	
-//	@Test
-//	void getAccountByIdTest() {
-//		User user = new User("Dan", "Felleman", "dfelleman");
-//		userDAO.createUser(user);
-//		
-//		user.setAccountNumber(1234567890);
-//		
-//		userDAO.updateUser(user);
-//		System.out.println(user);
-//		
-//		int accountNumber = userDAO.getAccountById(1);
-//		
-//		System.out.println(accountNumber);
-//		
-//	}
 	
 	
  	@Test
@@ -113,19 +98,7 @@ class UserDaoTests {
 		Assertions.assertEquals(getUserListTest, userDAO.getAllUsers());
 		
 	}
- 	
-// 	@Test
-// 	void getAccountBalanceTest() {
-// 		User user = new User("Peter", "Pettigrew", "ratlover");
-// 		userDAO.createUser(user);
-// 		
-// 		user.setAccountBalance(500.00);
-// 		
-// 		userDAO.updateUser(user);
-// 		
-// 		System.out.println(user);
-// 	}
-	
+
 	
 	
  	@Test

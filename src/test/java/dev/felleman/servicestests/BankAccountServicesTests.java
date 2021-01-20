@@ -76,15 +76,15 @@ class BankAccountServicesTests {
 		BankAccount acct = baServ.deposit(baDAO.getBankAccountById(7), 1000);
 		
 		
-		Assertions.assertEquals(2000, acct.getAccountBalance());
+		Assertions.assertEquals(2050, acct.getAccountBalance());
 	}
 	
 	@Test
 	void withdrawTest() {
 		
-		BankAccount acct = baServ.withdraw(baDAO.getBankAccountById(6), 1000);
+		BankAccount acct = baServ.withdraw(baDAO.getBankAccountById(22), 800);
 		
-		Assertions.assertEquals(1000, acct.getAccountBalance());
+		Assertions.assertEquals(75, acct.getAccountBalance());
 		
 	}
 	

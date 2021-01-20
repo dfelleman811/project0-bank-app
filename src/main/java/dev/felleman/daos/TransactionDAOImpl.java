@@ -20,7 +20,7 @@ public class TransactionDAOImpl implements TransactionDAO {
 	
 
 	@Override
-	public boolean createTransaction(Transaction t) {
+	public boolean createTransaction(Transaction t, BankAccount account) {
 		
 		try {
 			
@@ -28,11 +28,11 @@ public class TransactionDAOImpl implements TransactionDAO {
 			
 			CallableStatement cs = conn.prepareCall(sql);
 			
-			cs.setString(1, Integer.toString(t.getAccountNumber()));
+			cs.setString(1, Integer.toString(account.getAccountNumber()));
 			cs.setString(2, t.getTransactionType());
 			cs.setString(3, Double.toString(t.getTransactionAmount()));
-			cs.setString(4, Double.toString(t.getAccountBalance()));
-			cs.setString(5, Integer.toString(t.getUserId()));
+			cs.setString(4, Double.toString(account.getAccountBalance()));
+			cs.setString(5, Integer.toString(account.getUserId()));
 			
 			boolean success = cs.execute();
 			
@@ -68,6 +68,7 @@ public class TransactionDAOImpl implements TransactionDAO {
 				t.setAccountBalance(rs.getDouble("ACCOUNT_BALANCE"));
 				t.setUserId(rs.getInt("USER_ID"));
 				
+				System.out.println(t);
 				return t;
 			}
 		} catch (SQLException e) {
@@ -84,7 +85,7 @@ public class TransactionDAOImpl implements TransactionDAO {
 		
 		try {
 			
-			String sql = "SELECT * FROM transacations ORDER BY transaction_id";
+			String sql = "SELECT * FROM transactions ORDER BY transaction_id";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
@@ -102,6 +103,10 @@ public class TransactionDAOImpl implements TransactionDAO {
 				t.setUserId(rs.getInt("USER_ID"));
 				
 				transactions.add(t);
+			}
+			
+			for (Transaction t : transactions) {
+				System.out.println(t);
 			}
 			return transactions;
 			
@@ -140,6 +145,9 @@ public class TransactionDAOImpl implements TransactionDAO {
 				allUserTransactions.add(t);
 			}
 			
+			for (Transaction t : allUserTransactions) {
+				System.out.println(t);
+			}
 			return allUserTransactions;
 			
 		} catch (SQLException e) {
@@ -177,7 +185,9 @@ public class TransactionDAOImpl implements TransactionDAO {
 				
 				allBankAccountTransactions.add(t);
 			}
-			
+			for (Transaction t : allBankAccountTransactions) {
+				System.out.println(t);
+			}
 			return allBankAccountTransactions;
 			
 		} catch (SQLException e) {
@@ -185,5 +195,14 @@ public class TransactionDAOImpl implements TransactionDAO {
 		}
 		return null;
 	}
+	
+	//update
+	
+	@Override
+	public boolean updateTransaction(Transaction transaction) {
+		return false;
+	}
+	
+	//delete
 
 }

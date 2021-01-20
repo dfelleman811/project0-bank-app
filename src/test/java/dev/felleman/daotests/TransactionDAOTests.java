@@ -1,15 +1,15 @@
 package dev.felleman.daotests;
 
-import java.util.Date;
-import java.time.Instant;
-import java.time.LocalDate;
+import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import dev.felleman.daos.TransactionDAO;
 import dev.felleman.daos.TransactionDAOImpl;
+import dev.felleman.entities.BankAccount;
 import dev.felleman.entities.Transaction;
+import dev.felleman.entities.User;
 
 class TransactionDAOTests {
 	
@@ -18,20 +18,7 @@ class TransactionDAOTests {
 	@Test
 	void createTransactionTest() {
 		
-		Transaction t = new Transaction();
-		
-		t.setAccountNumber(100006);
-		t.setDatetime(Date.from(Instant.now()));
-		t.setTransactionType("deposit");
-		t.setTransactionAmount(500);
-		t.setAccountBalance(1500);
-		t.setUserId(6);
-		
-		tDAO.createTransaction(t);
-		
-		System.out.println(t);
-		
-//		Assertions.assertEquals(null, null);
+		//Transaction
 		
 	}
 	
@@ -39,17 +26,48 @@ class TransactionDAOTests {
 	void getTransactionTest() {
 		Transaction t = new Transaction();
 		
-		t.setAccountNumber(100021);
-		t.setTransactionType("deposit");
-		//t.setDatetime(Date.valueOf(LocalDate.now()));
-		t.setTransactionAmount(500);
-		t.setAccountBalance(1500);
-		t.setUserId(21);
-		t.setTransactionId(200041);
+		t.setAccountNumber(100024);
+		t.setTransactionType("withdrawal");
+		//t.setDatetime(Date.valueOf(LocalDate.now())); 
+		t.setTransactionAmount(800);
+		t.setAccountBalance(0);
+		t.setUserId(22);
+		t.setTransactionId(200053);
 		
-		Assertions.assertEquals(t, tDAO.getTransaction(200041));
+		Assertions.assertEquals(t, tDAO.getTransaction(200053));
 	}
 	
+	@Test
+	void getAllTransactionsTest() {
+		
+		List<Transaction> transactions = tDAO.getAllTransactions();
+		
+		
+		System.out.println(transactions);
+		
+		
+	}
 
+	
+	@Test
+	void getAllUserTransactionsTest() {
+		
+		User u = new User();
+		u.setUserId(6);
+		
+		List<Transaction> allUserTransactions = tDAO.getAllUserTransactions(u);
+		System.out.println(allUserTransactions);
+	}
+	
+	@Test
+	void getAllBankAccountTransactionsTest() {
+		
+		BankAccount a = new BankAccount();
+		a.setAccountNumber(100006);
+		
+		List<Transaction> allActTrans = tDAO.getAllBankAccountTransactions(a);
+		
+		System.out.println(allActTrans);
+	}
 
 }

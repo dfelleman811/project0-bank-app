@@ -10,7 +10,7 @@ public interface TransactionDAO {
 	
 	
 	// CREATE
-	public boolean createTransaction(Transaction transaction);
+	public boolean createTransaction(Transaction transaction, BankAccount account);
 
 	
 	
@@ -22,6 +22,8 @@ public interface TransactionDAO {
 	public List<Transaction> getAllUserTransactions(User user);
 	
 	public List<Transaction> getAllBankAccountTransactions(BankAccount bankAccount);
+	
+	public boolean updateTransaction(Transaction transaction);
 	
 	
 	// UPDATE ....do I really need to update Transactions?...I don't think so....
